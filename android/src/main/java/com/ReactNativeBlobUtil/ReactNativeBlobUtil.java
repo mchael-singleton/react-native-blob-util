@@ -144,7 +144,7 @@ public class ReactNativeBlobUtil extends ReactContextBaseJavaModule {
             }
 
             try {
-                this.getReactApplicationContext().startActivity(intent);
+                this.getCurrentActivity().startActivity(intent);
                 promise.resolve(true);
             } catch (ActivityNotFoundException ex) {
                 promise.reject("ENOAPP", "No app installed for " + mime);
